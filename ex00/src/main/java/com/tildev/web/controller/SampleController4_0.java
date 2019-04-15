@@ -15,8 +15,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
  * @date 2019. 4. 15.
  */
 @Controller
-public class SampleController4 {
-    private static final Logger logger = LoggerFactory.getLogger(SampleController4.class);
+public class SampleController4_0 {
+    private static final Logger logger = LoggerFactory.getLogger(SampleController4_0.class);
 
     @RequestMapping("doE")
     public String doE(RedirectAttributes rttr) {
