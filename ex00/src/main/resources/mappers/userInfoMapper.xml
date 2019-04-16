@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tildev.mapper.UserInfoMapper">
+
+    <select id="getTime" resultType="string">
+        select now();
+    </select>
+
+    <insert id="insertUserInfo">
+        insert into USER_INFO (user_id, user_pw,
+        user_name, user_email)
+        values(#{userId}, #{userPw}, #{userName}, #{userEmail})
+    </insert>
+
+</mapper>
