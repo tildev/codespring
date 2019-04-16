@@ -32,10 +32,10 @@ public class UserInfoDAOTest {
     @Test
     public void testInsertUserInfo() throws Exception {
         UserInfoVO userInfo = new UserInfoVO();
-        userInfo.setUserId("user00Id");
-        userInfo.setUserPw("user00Pw");
-        userInfo.setUserName("user00Name");
-        userInfo.setUserEmail("user00@aaa.com");
+        userInfo.setUserId("user01Id");
+        userInfo.setUserPw("user01Pw");
+        userInfo.setUserName("user01Name");
+        userInfo.setUserEmail("user01@aaa.com");
 
         userInfoDao.insertUserInfo(userInfo);
     }
