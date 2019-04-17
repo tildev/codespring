@@ -3,6 +3,9 @@
  */
 package com.tildev.web.dao;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -30,6 +33,21 @@ public class UserInfoDAOImpl implements UserInfoDAO {
     @Override
     public void insertUserInfo(UserInfoVO userInfo) {
         sqlSession.insert(namespace + ".insertUserInfo", userInfo);
+    }
+
+    @Override
+    public UserInfoVO readUserInfo(String userId) throws Exception {
+        return (UserInfoVO) sqlSession.selectOne(namespace + ".selectUserInfo", userId);
+    }
+
+    @Override
+    public UserInfoVO readWithPw(String userId, String userPw) throws Exception {
+        Map<String, Object> paramMap = new HashMap<String, Object>();
+
+        paramMap.put("userId", userId);
+        paramMap.put("userPw", userPw);
+
+        return sqlSession.selectOne(namespace + ".readWithPw", paramMap);
     }
 
 }

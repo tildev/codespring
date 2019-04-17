@@ -15,4 +15,7 @@ public interface UserInfoDAO {
 
     public void insertUserInfo(UserInfoVO userInfo);
 
+    public UserInfoVO readUserInfo(String userId) throws Exception;
+    
+    public UserInfoVO readWithPw(String userId, String userPw) throws Exception;
 }

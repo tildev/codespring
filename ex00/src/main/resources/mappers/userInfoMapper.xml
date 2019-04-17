@@ -11,8 +11,19 @@
 
     <insert id="insertUserInfo">
         insert into USER_INFO (user_id, user_pw,
-        user_name, user_email)
+        user_name,
+        user_email)
         values(#{userId}, #{userPw}, #{userName}, #{userEmail})
     </insert>
 
+    <select id="selectUserInfo"
+        resultType="com.tildev.web.domain.UserInfoVO">
+        select * from USER_INFO where user_id=#{userId}
+    </select>
+
+    <select id="readWithPw"
+        resultType="com.tildev.web.domain.UserInfoVO">
+        select * from USER_INFO where user_id=#{userId} and
+        user_pw=#{userPw}
+    </select>
 </mapper>
